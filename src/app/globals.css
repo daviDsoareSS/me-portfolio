@@ -235,6 +235,8 @@ header .wrapper-right-links ul li a{
   text-decoration: none;
 }
 .main-content{ 
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(93, 129, 247, 0.205) 0%, rgba(0,0,0,0) 30%);
   background-color: #000;
   text-align: center;
   display: flex;
@@ -327,6 +329,8 @@ section.section-about{
   background-color: black;
 }
 section.section-about .wrapper-about{
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(93, 129, 247, 0.205) 0%, rgba(0,0,0,0) 65%);
   text-align: center;
   color: white;
   margin-bottom: 50px;
@@ -395,6 +399,7 @@ section.section-about .wrapper-languages h2{
   color: #fff;
 }
 section.section-about .wrapper-languages .languages {
+  list-style: none;
   display: flex;
   justify-content: space-between;
 }
