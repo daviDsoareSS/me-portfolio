@@ -52,12 +52,27 @@ export default function SectionProjects() {
             <Swiper
               className="grid-projects"
               navigation={true}
-              spaceBetween={2}
-              slidesPerView={3}
+              spaceBetween={30}
+              centeredSlides={true}
               autoplay={{
                 delay: 2000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
+              }}
+              
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 40,
+                },
+                1100: {
+                  slidesPerView: 3,
+                  spaceBetween: 50,
+                },
               }}
               modules={[Navigation, Autoplay]}
             >
@@ -67,23 +82,22 @@ export default function SectionProjects() {
                   <SwiperSlide key={item.name}>
                     <div className="card-project">
                       <img className="" src={item.image} alt={item.name} />
-                      <div className="wrapper-project">
-                        <span>{item.language}</span>
+                    </div>
+                    <div className="wrapper-project">
+                      <div className="header">
                         <h3>{item.name}</h3>
-                        <div className="info-project">
-                          <p>{item.text}</p>
-                          <div className="view-project">
-                            <Link className="links" href={item.url_github} target="blank">
-                              <i className="fa-brands fa-github"></i>
-                              Ver código
-                            </Link>
-                            <Link className="links" href={item.url} target="blank">
-                              <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                              Ir para o site
-                            </Link>
-                          </div>
+                        <div className="line"></div>
+                        <div className="view-project">
+                          <Link className="links" href={item.url_github} target="blank">
+                            <i className="fa-brands fa-github"></i>
+                          </Link>
+                          <Link className="links" href={item.url} target="blank">
+                            <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                          </Link>
                         </div>
                       </div>
+                      <span>{item.language}</span>
+                      <p>{item.text}</p>
                     </div>
                   </SwiperSlide>
                 ))}

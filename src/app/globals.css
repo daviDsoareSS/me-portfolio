@@ -233,6 +233,21 @@ header .wrapper-right-links ul{
 header .wrapper-right-links ul li a{
   color: #fff;
   text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+}
+header .wrapper-right-links ul li a::before{
+  transition: all .3s ease-in-out;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #06c;
+  bottom: 0;
+  left: 0;
+}
+header .wrapper-right-links ul li a:hover::before{
+  width: 100%;
 }
 .main-content{ 
   background: rgb(0,0,0);
@@ -324,13 +339,17 @@ header .wrapper-right-links ul li a{
 section{
   margin-bottom: 50px;
 }
+section:target{
+  display: none;
+  background-color: red !important;
+}
 section.section-about{
   padding: 120px 0;
   background-color: black;
 }
 section.section-about .wrapper-about{
   background: rgb(0,0,0);
-  background: radial-gradient(circle, rgba(93, 129, 247, 0.205) 0%, rgba(0,0,0,0) 65%);
+  background: radial-gradient(circle, rgba(93, 129, 247, 0.205) 0%, rgba(0,0,0,0) 56%);
   text-align: center;
   color: white;
   margin-bottom: 50px;
@@ -451,16 +470,16 @@ section.section-projects .wrapper-projects .content ul.filter-projects{
   text-align: left;
   padding-left: 0;
   list-style: none;
-  gap: 30px;
-  margin-bottom: 40px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 section.section-projects .wrapper-projects .content ul.filter-projects li{
-  font-family: 'San Francisco Light';
+  font-family: 'San Francisco';
   cursor: pointer;
   background-color: #e4e4e6;
   color: rgb(29, 29, 29);
   border-radius: 35px;
-  padding: 10px 20px;
+  padding: 5px 10px;
 }
 section.section-projects .wrapper-projects .content ul.filter-projects li.active{
   background-color: #9c9c9c;
@@ -470,87 +489,96 @@ section.section-projects .wrapper-projects .content .grid-projects{
   max-width: 1300px;
   margin: 0 auto; 
   row-gap: 30px;
+  padding: 12px 0;
 }
 section.section-projects .card-project{
   position: relative;
-  border-radius: 15px;
+  border-radius: 7px;
   overflow: hidden;
   width: 410px;
-  height: 400px;
+  height: 250px;
   outline: 1px solid rgba(53, 53, 53, 0.055);
-}
-
-section.section-projects .card-project:before{
-  content: "";
-  position: absolute;
-  background: rgb(0,0,0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 50%);
-  width: 500px;
-  height: 400px;
-  z-index: 1;
+  -webkit-box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.46);
+  -moz-box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.46);
+  box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.46);
 }
 section.section-projects .card-project span{
-  background-color: #fff;
-  color: #000;
+  color: #fff;
   font-family: 'San Francisco Bold';
-  padding: 0 6px;
+  font-size: 15px;
 }
 section.section-projects .card-project img{
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 410px;
+  left: 25px;
+  top: 40px;
+  border-radius: 7px;
+  width: 355px;
   height: fit-content;
+  z-index: 99;
   object-fit: contain;
   bottom: 0;
   overflow: hidden;
   transition: all .3s ease-in-out;
 }
-section.section-projects .card-project .wrapper-project{
-  padding: 20px;
+section.section-projects .card-project:before{
+  content: "";
   position: absolute;
-  bottom: 0;
-  z-index: 99;
-  color: #fff;
-  text-decoration: none;
+  background: #232323;
+  width: 500px;
+  height: 400px;
+  z-index: 1;
 }
 section.section-projects .card-project:hover img{
-  filter: blur(2px);
+  transform: scale(1.08) translateY(25px) rotate(0.5deg);
 }
-section.section-projects .card-project:hover .wrapper-project {
-  background-color: #000;
+section.section-projects .card-project:hover span{
+  padding: 0 6px;
+  border-left: 4px solid #06c;
+  color: #000;
 }
-section.section-projects .card-project .wrapper-project .info-project{
-  font-size: 0;
-  transition: all .3s ease-in-out;
+section.section-projects .wrapper-project {
+  width: 410px;
 }
-section.section-projects .card-project:hover .wrapper-project .info-project,
-section.section-projects .wrapper-projects .content .grid-projects .card-project:hover .view-project .links{
-  font-size: 16.67px;
-}
-section.section-projects .card-project .wrapper-project .info-project p{
-  color: #fff;
-}
-section.section-projects .card-project h3{
-  margin: 5px 0;
-  font-size: 25px;
-  font-weight: 500;
-}
-section.section-projects .card-project .view-project{
+section.section-projects .wrapper-project .header{
+  margin-top: 15px;
+  margin-bottom: 5px;
   display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 22px;
 }
-section.section-projects .card-project .view-project .links{
-  text-decoration: none;
-  font-size: 0;
-  transition: all .3s ease-in-out;
-  color: #fff;
+section.section-projects .wrapper-project .header h3{
+  position: relative;
+  font-weight: bold;
+  color: #232323;
+  flex-shrink: 0;
+  max-width: calc(100% - 150px);
+}
+section.section-projects .wrapper-project .header .line{
+  width: 100%;
+  height: 1px;
+  background-color: #9c9c9c;
+}
+section.section-projects .wrapper-project .header .view-project{
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
 }
-section.section-projects .card-project .view-project .links svg{
-  color: #fff;
+section.section-projects .wrapper-project .header .view-project .links{
+  text-decoration: none;
+  color: #232323;
 }
+section.section-projects .wrapper-project span{
+  color: #06c;
+  font-weight: 500;
+  font-size: 16px;
+}
+section.section-projects .wrapper-project p{
+  color: #232323;
+  margin-top: 5px;
+  font-size: 18px;
+}
+
 .swiper-wrapper{
   padding-top: 1px !important;
 }
@@ -665,4 +693,31 @@ section.lead .wrapper-lead .group-button button{
   color: #fff;
   width: 401px;
   height: 40px;
+}
+
+@media(max-width: 900px){
+  header{
+    padding: 40px 50px;
+  }
+  header .wrapper-right-links{
+    display: none;
+  }
+  header .wrapper-right-links{
+
+  }
+  .main-content .wrapper-content .header-content h3{
+    font-size: 35px;
+  }
+  section.section-about .wrapper-about .content .group-info{
+    flex-basis: 100%;
+  }
+  section.section-about .wrapper-about .content .group-info .text{
+    width: auto;
+  }
+  section.section-about .wrapper-languages .languages{
+    flex-wrap: wrap;
+  }
+  section.section-about .wrapper-languages .languages li{
+    flex-basis: 30%;
+  }
 }

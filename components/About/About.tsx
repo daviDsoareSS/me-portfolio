@@ -76,12 +76,12 @@ export default function About(){
                 <div className="tooltip">Nextjs</div>
               </li>
               <li>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" />
-                <div className="tooltip">Laravel</div>
-              </li>
-              <li>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
                 <div className="tooltip">PHP</div>
+              </li>
+              <li>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" />
+                <div className="tooltip">Laravel</div>
               </li>
               <li>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />

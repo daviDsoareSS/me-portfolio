@@ -13,10 +13,10 @@ export default function Header(){
         <div className="wrapper-right-links">
           <ul>
             <li>
-              <a href="">Sobre</a>
+              <a href="#">Sobre</a>
             </li>
             <li>
-              <a href="">Projetos</a>
+              <a href="#projects">Projetos</a>
             </li>
             <li>
               <a href="">Resumo</a>
@@ -26,6 +26,7 @@ export default function Header(){
             </li>
           </ul>
         </div>
+        <button className="menu-header">Menu</button>
       </div>
     </header>
   </div>

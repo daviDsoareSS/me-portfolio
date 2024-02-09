@@ -46,7 +46,7 @@ export const projects = [
   },
   {
     id: 6,
-    name: 'Zeidan Consultoria e Seguros',
+    name: 'Zeidan Consultoria',
     image: '/img/projects/zeidanConsultoria.webp',
     text: 'Lorem ipsum dolar Lorem ipsum dolar Lorem ipsum dolar Lorem ipsum dolar Lorem ipsum dolar Lorem ipsum dolar Lorem ipsum dolar Lorem ipsum dolar',
     language: 'PHP | Javascript',

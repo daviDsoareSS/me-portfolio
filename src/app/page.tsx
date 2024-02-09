@@ -1,9 +1,9 @@
-import Image from 'next/image';
 
 import About from '../../components/About/About';
 import SectionProjects from '../../components/Projects/SectionProjects';
 import Resume from '../../components/Resume/Resume';
 import Contact from '../../components/Contact/Contact';
+import { useRef } from 'react';
 
 export default function Home() {
   
