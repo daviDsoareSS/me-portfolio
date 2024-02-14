@@ -509,10 +509,10 @@ section.section-projects .card-project span{
 }
 section.section-projects .card-project img{
   position: absolute;
-  left: 25px;
-  top: 40px;
+  left: 0;
+  top: 0px;
   border-radius: 7px;
-  width: 355px;
+  width: 410px;
   height: fit-content;
   z-index: 99;
   object-fit: contain;
@@ -523,13 +523,13 @@ section.section-projects .card-project img{
 section.section-projects .card-project:before{
   content: "";
   position: absolute;
-  background: #232323;
+  background: #bcbcbc;
   width: 500px;
   height: 400px;
   z-index: 1;
 }
 section.section-projects .card-project:hover img{
-  transform: scale(1.08) translateY(25px) rotate(0.5deg);
+  transform: scale(1.06) translateY(18px) rotate(0.5deg);
 }
 section.section-projects .card-project:hover span{
   padding: 0 6px;
