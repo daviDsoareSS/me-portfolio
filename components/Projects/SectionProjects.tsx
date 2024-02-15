@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Link from "next/link";
+import { motion } from 'framer-motion';
 
 import { projects } from "./Projects";
 
@@ -27,25 +28,56 @@ export default function SectionProjects() {
 
   return (
     <>
-      <section className="section-projects">
+      <section className="section-projects" id='projects'>
         <div className="wrapper-projects">
           <div className="content-size-section">
-            <h2>Projetos</h2>
-            <p>Aqui estão alguns projetos pessoais e profissionais.</p>
+            <motion.h2
+              initial= {{ opacity: 0, x: -150 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4}}
+            >
+              Projetos
+            </motion.h2>
+            <motion.p
+               initial= {{ opacity: 0, y: 150 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               exit={{ opacity: 0, y: 0 }}
+               transition={{ duration: 0.4, delay: 0.2}}
+            >
+            Aqui estão alguns projetos pessoais e profissionais.            
+            </motion.p>
           </div>
 
           <div className="content">
             <div className="content-size-section">
               <ul className="filter-projects">
-                <li className={`repos-php ${contentProject === '' ? 'active' : ''}`} onClick={filterAll}>
+                <motion.li className={`repos-php ${contentProject === '' ? 'active' : ''}`} onClick={filterAll}
+                  initial= {{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0}}
+                  transition={{ duration: 0.15, delay: 0.25}}
+                >
                   Todos
-                </li>
-                <li className={`repos-js ${contentProject === 'React JS' ? 'active' : ''}`} onClick={filterJS}>
+                </motion.li>
+                
+                <motion.li className={`repos-js ${contentProject === 'React JS' ? 'active' : ''}`} onClick={filterJS}
+                  initial= {{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0}}
+                  transition={{ duration: 0.30, delay: 0.40}}
+                >
                   Javascript
-                </li>
-                <li className={`repos-php ${contentProject === 'Laravel PHP' ? 'active' : ''}`} onClick={filterPHP}>
+                </motion.li>
+
+                <motion.li className={`repos-php ${contentProject === 'Laravel PHP' ? 'active' : ''}`} onClick={filterPHP}
+                  initial= {{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0}}
+                  transition={{ duration: 0.40, delay: 0.50}}
+                >
                   Laravel PHP
-                </li>
+                </motion.li>
               </ul>
             </div>
 
@@ -77,12 +109,22 @@ export default function SectionProjects() {
             >
               {projects
                 .filter((item) => (contentProject === '' ? true : item.language === contentProject))
-                .map((item) => (
+                .map((item, i) => (
                   <SwiperSlide key={item.name}>
-                    <div className="card-project">
+                    <motion.div className="card-project"
+                      initial= {{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0}}
+                      transition={{ duration: 0.3, delay: 0.1 + i * 0.1}}
+                    >
                       <img className="" src={item.image} alt={item.name} />
-                    </div>
-                    <div className="wrapper-project">
+                    </motion.div>
+                    <motion.div className="wrapper-project"
+                      initial= {{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0}}
+                      transition={{ duration: 0.3, delay: 0.1 + i * 0.05}}
+                    >
                       <div className="header">
                         <h3>{item.name}</h3>
                         <div className="line"></div>
@@ -97,7 +139,7 @@ export default function SectionProjects() {
                       </div>
                       <span>{item.language}</span>
                       <p>{item.text}</p>
-                    </div>
+                    </motion.div>
                   </SwiperSlide>
                 ))}
             </Swiper>

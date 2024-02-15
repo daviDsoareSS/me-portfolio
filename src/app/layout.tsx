@@ -20,10 +20,6 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={inter.className}>
         <Header />
-        
-          <div className="button-floating">
-            <i className="fa-regular fa-moon"></i>
-          </div>
 
         {children}
 

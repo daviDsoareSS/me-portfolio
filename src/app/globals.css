@@ -72,6 +72,20 @@
 } 
 @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-20px)}100%{transform:translateY(0)}}
 
+body::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #0c0c0c;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #fff;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 2px solid #0c0c0c;
+}
+
 body{
   font-family: "San Francisco";
   font-weight: normal;
@@ -100,6 +114,7 @@ body{
   box-shadow: 0px 4px 14px -7px rgba(0,0,0,0.75);
 }
 .button-floating{
+  cursor: pointer;
   clip-path: circle();
   border-radius: 50%;
   padding: 20px;
@@ -186,8 +201,8 @@ body{
   background-color: #EF513A;
 }
 .sticky-header{
-  background-color: white;
   position: sticky;
+  z-index: 999;
   height: 5.8rem;
 }
 .content-header{
@@ -204,16 +219,23 @@ body{
   margin: 0 auto;  
 }
 header{
+  transition: all .3s ease-in-out;
+  position: fixed;
   background-color: #000;
   width: 100%;
   font-family: "San Francisco Semibold";
   padding: 40px 100px;
+  opacity: 1;
+}
+header.hidden{
+  opacity: 0;
+  padding: 20px 100px;
+  transform: translateY(-100px);
 }
 header .wrapper-left-logo{
   display: flex;
   align-items: center;
   color: #fff;
-
 }
 header .wrapper-left-logo i{
   margin-right: 50px;
@@ -229,6 +251,9 @@ header .wrapper-right-links ul{
   list-style: none;
   gap: 70px;
   padding-left: 0;
+}
+header .wrapper-right-links ul li {
+  cursor: pointer;
 }
 header .wrapper-right-links ul li a{
   color: #fff;
@@ -246,8 +271,12 @@ header .wrapper-right-links ul li a::before{
   bottom: 0;
   left: 0;
 }
-header .wrapper-right-links ul li a:hover::before{
+header .wrapper-right-links ul li a:hover::before,
+header .wrapper-right-links ul li a.active::before{
   width: 100%;
+}
+header .menu-header{
+  display: none;
 }
 .main-content{ 
   background: rgb(0,0,0);
@@ -334,6 +363,7 @@ header .wrapper-right-links ul li a:hover::before{
   margin-top: 50px;
 }
 .main-content .wrapper-content #view-more a{
+  cursor: pointer;
   color: #06c;
 }
 section{
@@ -632,9 +662,11 @@ section.section-work .wrapper-info .card small{
 section.section-work .wrapper-info .card small{
   color: var(--color-subtitle);
 }
-
 section.lead {
   text-align: center;
+  background-color: #F5F5F7;
+  padding-bottom: 10rem;
+  margin-bottom: 0;
 }
 section.lead h2.title-section{
   font-family: 'San Francisco';
@@ -650,10 +682,8 @@ section.lead .location{
 }
 section.lead .wrapper-lead{
   padding: 60px;
-  background-color: #F5F5F7;
   border-radius: 3px;
   outline: none;
-  border: 1px solid rgb(210, 210, 215);
 }
 section.lead .wrapper-lead .form-lead {
   margin-top: 60px;
@@ -693,6 +723,35 @@ section.lead .wrapper-lead .group-button button{
   color: #fff;
   width: 401px;
   height: 40px;
+}
+footer{
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+footer .content-size-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+footer h3{
+  font-family: 'San Francisco';
+  font-weight: 400;
+}
+footer ul{
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  gap: 20px;
+}
+footer ul li{
+  font-size: 25px;
+}
+footer ul li a{
+  text-decoration: none;
+  color: #fff;
 }
 
 @media(max-width: 900px){

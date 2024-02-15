@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 function isInputNamedElement(e: Element): e is HTMLInputElement & { name: string, subject: string} {
     return 'value' in e && 'name' in e
@@ -86,9 +87,20 @@ export default function Contact(){
                 </div>
             )}
             
-            <section className="lead">
+            <section 
+                className="lead"
+                id="contact"
+                
+            >
                 <div className="content-size-section">
-                    <div className="wrapper-lead">
+                    <motion.div 
+                        className="wrapper-lead"
+                        initial= {{ opacity: 0, y: 100, scale: 0 }}
+                        whileInView={{ opacity: 1, y: 0 , scale: 1}}
+                        exit={{ opacity: 0, y: 0 , scale: 0}}
+                        transition={{ duration: 0.5, delay: 0.2}}
+                        >
+                            
                         <h2 className="title-section">Entre em contato comigo</h2>
                         <Link className="location" href="https://maps.app.goo.gl/ndi3xCKPMW9Zkbvt8" target="blank">
                             <p>Rua Recife, Vila Seabra</p>
@@ -107,7 +119,7 @@ export default function Contact(){
                                 <button id="buttonSubmit" type="submit">Enviar</button>
                             </div>
                         </form>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
         </>
