@@ -5,6 +5,7 @@ import Links from 'next/link';
 import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function Header(){
+
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -22,6 +23,12 @@ export default function Header(){
     };
   }, [lastScrollTop]);
 
+  const [ activeMenu, setActiveMenu ] = useState(false);
+
+  const handleClick = () => {
+    setActiveMenu(!activeMenu);
+  }
+
   return(
     <div className="sticky-header">
       <header className={visible ? '' : 'hidden'}>
@@ -31,7 +38,7 @@ export default function Header(){
               <p><i className="fa-regular fa-envelope"></i>davidsoares2156@gmail.com</p>
             </Links> 
           </div>
-          <div className="wrapper-right-links">
+          <div className={activeMenu ? 'wrapper-right-links active' : 'wrapper-right-links'}>
             <ul>
               <li>
                 <Link 
@@ -79,7 +86,9 @@ export default function Header(){
               </li>
             </ul>
           </div>
-          <button className="menu-header">Menu</button>
+          <button onClick={handleClick} className="menu-header">
+            <i className="fa-solid fa-bars"></i>
+          </button>
         </div>
       </header>
     </div>

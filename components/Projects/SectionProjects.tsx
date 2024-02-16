@@ -85,6 +85,7 @@ export default function SectionProjects() {
               className="grid-projects"
               navigation={true}
               spaceBetween={30}
+              centeredSlides={false}
               autoplay={{
                 delay: 2000,
                 disableOnInteraction: false,
@@ -110,7 +111,7 @@ export default function SectionProjects() {
               {projects
                 .filter((item) => (contentProject === '' ? true : item.language === contentProject))
                 .map((item, i) => (
-                  <SwiperSlide key={item.name}>
+                  <SwiperSlide className="slide" key={item.name}>
                     <Link href={item.url} target='blank'>
                       <motion.div className="card-project"
                         initial= {{ opacity: 0, scale: 0 }}

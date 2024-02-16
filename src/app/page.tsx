@@ -41,7 +41,9 @@ export default function Home() {
             <h3>Desenvolvedor <span>Front-end</span></h3>
           </motion.div>
           <div className="footer-content">
-            <button>Download CV</button>
+            <a href={process.env.LINK_DOWNLOAD_CV}>
+              <button>Download CV</button>
+            </a>
             <ul>
               <li>
                 <a href={process.env.LINK_GITHUB} target='blank'>
