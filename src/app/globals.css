@@ -71,6 +71,14 @@
   font-style: normal;
 } 
 @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-20px)}100%{transform:translateY(0)}}
+@keyframes blink{
+  to{
+    opacity: 0;
+  }
+  from{
+    opacity: 1;
+  }
+}
 
 body::-webkit-scrollbar {
   width: 8px;               /* width of the entire scrollbar */
@@ -219,7 +227,7 @@ body{
   margin: 0 auto;  
 }
 header{
-  transition: all .3s ease-in-out;
+  transition: all .5s ease-in-out;
   position: fixed;
   background-color: #000;
   width: 100%;
@@ -378,6 +386,7 @@ header .menu-header{
 .main-content .wrapper-content #view-more a{
   cursor: pointer;
   color: #06c;
+  animation: blink 1s infinite;
 }
 section{
   margin-bottom: 50px;
