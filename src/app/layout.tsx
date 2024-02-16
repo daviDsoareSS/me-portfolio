@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Script from 'next/script'
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -23,7 +25,8 @@ export default function RootLayout({
 
         {children}
 
-        <script src="https://kit.fontawesome.com/639efb6961.js"></script>
+        <Script src="https://kit.fontawesome.com/639efb6961.js"></Script>
+
       </body>
     </html>
   );
