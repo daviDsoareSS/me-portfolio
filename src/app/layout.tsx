@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Portifolio David Soares",
-  description: "Olá, me chamo David e tenho 20 anos, sou um desenvolvedor apaixonado por tecnologia, com experiência em PHP, Javascript, Laravel e técnicas de SEO para o Google.",
+  description: "Seja muito bem vindo, me chamo David e tenho 20 anos, sou um desenvolvedor apaixonado por tecnologia, com experiência em PHP, Javascript, Laravel e técnicas de SEO para o Google.",
 };
 
 export default function RootLayout({
