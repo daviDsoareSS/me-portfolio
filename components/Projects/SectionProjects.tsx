@@ -122,7 +122,7 @@ export default function SectionProjects() {
                         initial= {{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0}}
-                        transition={{ duration: 0.1, delay: 0.1}}
+                        transition={{ duration: 0.1, delay: 0.05}}
                       >
                         <Image className="image-project" src={item.image} alt={item.name} width={410} height={250}/>
                         {/* <img className="" src={item.image} alt={item.name} /> */}
@@ -133,7 +133,7 @@ export default function SectionProjects() {
                       initial= {{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0}}
-                      transition={{ duration: 0.1, delay: 0.1 + i * 0.01}}
+                      transition={{ duration: 0.1, delay: 0.05}}
                     >
                       <div className="header">
                         <h3>{item.name}</h3>
