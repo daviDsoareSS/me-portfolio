@@ -92,7 +92,7 @@ export default function SectionProjects() {
               spaceBetween={10}
               centeredSlides={false}
               autoplay={{
-                delay: 2000,
+                delay: 3000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
               }}
