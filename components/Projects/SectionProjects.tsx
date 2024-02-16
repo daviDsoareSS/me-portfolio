@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from "next/link";
 
+import { useMediaQuery } from 'react-responsive';
 import { motion } from 'framer-motion';
 
 import { projects } from "./Projects";
@@ -14,6 +15,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 export default function SectionProjects() {
+  const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
+
   const [contentProject, setContentProject] = useState('');
 
   const filterAll = () => {

@@ -859,8 +859,8 @@ footer ul li a{
     position: relative;
     border-radius: 7px;
     overflow: hidden;
-    width: 310px;
-    height: 160px;
+    width: 90%;
+    height: 210px;
     outline: 1px solid rgba(53, 53, 53, 0.055);
     -webkit-box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.46);
     -moz-box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.46);
@@ -871,7 +871,7 @@ footer ul li a{
     left: 0;
     top: 0px;
     border-radius: 7px;
-    width: 310px;
+    width: 100%;
     height: fit-content;
     z-index: 99;
     object-fit: contain;
@@ -883,12 +883,18 @@ footer ul li a{
     content: "";
     position: absolute;
     background: #bcbcbc;
-    width: 410px;
+    width: 90%;
     height: 310px;
     z-index: 1;
   }
+  section.section-projects .wrapper-project .header h3{
+    font-size: 20px;
+  }
+  section.section-projects .wrapper-project p{
+    font-size: 15px;
+  }
   section.section-projects .wrapper-project{
-    width: 310px;
+    width: 90%;
   } 
   section.section-work h2.title-section{
     margin-left: 0;
