@@ -136,6 +136,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: float 2s infinite;
 }
 
 .button-floating i{
@@ -298,6 +299,7 @@ header .menu-header{
   border-radius: 50%;
   background-color: #fff;
   display: none;
+  transition: all .4s ease-in-out;
 }
 .main-content{ 
   background: rgb(0,0,0);
@@ -781,11 +783,16 @@ footer ul li a{
     padding: 0 20px;
   }
   header{
-    padding: 40px 50px;
+    padding: 40px 30px;
   }
   header.hidden{
+    padding: 10px 30px;
     opacity: 1;
     transform: translateY(0px);
+  }
+  header.hidden .menu-header{
+    width: 25px;
+    height: 25px;
   }
   header .wrapper-left-logo .my-email p{
     display: flex;
@@ -808,7 +815,8 @@ footer ul li a{
     opacity: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    padding-top: 10rem;
     z-index: 999;
     top: 0;
     right: 0;
@@ -816,7 +824,7 @@ footer ul li a{
     -webkit-box-shadow: -4px 0px 20px -10px rgba(0,0,0,0.5);
     -moz-box-shadow: -4px 0px 20px -10px rgba(0,0,0,0.5);
     box-shadow: -4px 0px 20px -10px rgba(0,0,0,0.5);
-    transition: all .3s ease-in-out;
+    transition: all .4s ease-in-out;
   }
   header .wrapper-right-links ul {
     display: flex;
