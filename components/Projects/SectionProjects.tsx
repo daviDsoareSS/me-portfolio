@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from "next/link";
+
 import { motion } from 'framer-motion';
 
 import { projects } from "./Projects";
@@ -119,7 +121,8 @@ export default function SectionProjects() {
                         exit={{ opacity: 0, scale: 0}}
                         transition={{ duration: 0.3, delay: 0.1 + i * 0.1}}
                       >
-                        <img className="" src={item.image} alt={item.name} />
+                        <Image className="image-project" src={item.image} alt={item.name} width={410} height={250}/>
+                        {/* <img className="" src={item.image} alt={item.name} /> */}
                       </motion.div>
                     </Link>
 
