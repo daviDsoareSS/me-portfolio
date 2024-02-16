@@ -89,7 +89,7 @@ export default function SectionProjects() {
             <Swiper
               className="grid-projects"
               navigation={true}
-              spaceBetween={30}
+              spaceBetween={10}
               centeredSlides={false}
               autoplay={{
                 delay: 2000,
@@ -108,7 +108,7 @@ export default function SectionProjects() {
                 },
                 1100: {
                   slidesPerView: 3,
-                  spaceBetween: 50,
+                  spaceBetween: 30,
                 },
               }}
               modules={[Navigation, Autoplay]}

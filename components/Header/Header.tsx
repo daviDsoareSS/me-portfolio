@@ -68,7 +68,7 @@ export default function Header(){
                   activeClass="active"
                   spy={true}
                   smooth={true}
-                  offset={-70}
+                  offset={-20}
                   duration={1200}>
                   Resumo
                 </Link>
