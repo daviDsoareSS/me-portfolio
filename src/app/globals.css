@@ -870,7 +870,7 @@ footer ul li a{
     justify-content: center;
   }
   section.section-projects .swiper-slide-active{
-    margin-left: 24px;
+    margin-left: 20px;
   }
   section.section-projects .card-project{
     position: relative;
@@ -908,7 +908,7 @@ footer ul li a{
     font-size: 20px;
   }
   section.section-projects .wrapper-project p{
-    font-size: 15px;
+    font-size: 17px;
   }
   section.section-projects .wrapper-project{
     width: 90%;
