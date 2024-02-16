@@ -27,7 +27,7 @@ export default function Home() {
         <motion.div className="wrapper-content"
           initial= {{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0 }}
+          exit={{ opacity: 0, x: 0 }}
           transition={{ duration: 0.3 }}
         >
           <motion.div className="header-content"

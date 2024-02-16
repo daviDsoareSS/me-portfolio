@@ -111,14 +111,17 @@ export default function SectionProjects() {
                 .filter((item) => (contentProject === '' ? true : item.language === contentProject))
                 .map((item, i) => (
                   <SwiperSlide key={item.name}>
-                    <motion.div className="card-project"
-                      initial= {{ opacity: 0, scale: 0 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0}}
-                      transition={{ duration: 0.3, delay: 0.1 + i * 0.1}}
-                    >
-                      <img className="" src={item.image} alt={item.name} />
-                    </motion.div>
+                    <Link href={item.url} target='blank'>
+                      <motion.div className="card-project"
+                        initial= {{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0}}
+                        transition={{ duration: 0.3, delay: 0.1 + i * 0.1}}
+                      >
+                        <img className="" src={item.image} alt={item.name} />
+                      </motion.div>
+                    </Link>
+
                     <motion.div className="wrapper-project"
                       initial= {{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -129,9 +132,9 @@ export default function SectionProjects() {
                         <h3>{item.name}</h3>
                         <div className="line"></div>
                         <div className="view-project">
-                          <Link className="links" href={item.url_github} target="blank">
+                          {/* <Link className="links" href={item.url_github} target="blank">
                             <i className="fa-brands fa-github"></i>
-                          </Link>
+                          </Link> */}
                           <Link className="links" href={item.url} target="blank">
                             <i className="fa-solid fa-arrow-up-right-from-square"></i>
                           </Link>

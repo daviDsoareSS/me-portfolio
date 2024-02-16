@@ -49,7 +49,7 @@ export default function Header(){
                   activeClass="active"
                   spy={true}
                   smooth={true}
-                  offset={-100}
+                  offset={-35}
                   duration={1200}
                   to="projects">
                   Projetos
